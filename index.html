@@ -87,6 +87,30 @@ details p{margin:10px 0 0;color:var(--mut)}
 .faq{max-width:800px;margin:0 auto}
 .dlbox{background:#fff;border:2px solid var(--g);border-radius:20px;padding:36px;text-align:center;max-width:760px;margin:0 auto}
 .dlbox .btn{font-size:18px;padding:16px 34px}
+/* download safety guide */
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px;text-align:start}
+.gstep{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.gstep>b{display:flex;align-items:center;gap:8px;font-size:15.5px;margin-bottom:8px}
+.gstep>b i{font-style:normal;width:26px;height:26px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-size:13px;flex:none}
+.gstep p{margin:8px 0 0;font-size:14px;color:var(--mut)}
+.mock{border-radius:8px;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif;direction:ltr;text-align:left;font-size:11.5px;line-height:1.45}
+.mock.win{background:#0f5fa6;color:#fff;padding:12px 12px 10px}
+.mock.win .t{font-size:15px;font-weight:600;margin-bottom:6px}
+.mock.win .lnk{text-decoration:underline;font-weight:600}
+.mock.win .lnk.hl,.mock .hl{outline:3px solid #f5c84c;outline-offset:2px;border-radius:3px}
+.mock.win .btns{display:flex;justify-content:flex-end;gap:6px;margin-top:10px}
+.mock.win .btns span{border:1px solid #fff;padding:3px 10px;font-size:11px}
+.mock.dl{background:#fff;border:1px solid #d8dde0;padding:10px;color:#222}
+.mock.dl .row{display:flex;align-items:center;gap:8px}
+.mock.dl .ic{width:22px;height:22px;border-radius:4px;background:#e9b44c;display:grid;place-items:center;font-weight:700;color:#fff;font-size:12px}
+.mock.dl .act{display:flex;gap:6px;margin-top:8px;justify-content:flex-end}
+.mock.dl .act span{border:1px solid #c9ced2;border-radius:4px;padding:2px 9px}
+.safe{display:flex;gap:10px;align-items:flex-start;background:var(--gl);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:14.5px;text-align:start}
+.dlm{position:fixed;inset:0;background:rgba(10,30,25,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.dlm.on{display:flex}
+.dlm .box{background:var(--bg);border-radius:18px;max-width:900px;width:100%;padding:26px;max-height:92vh;overflow:auto;position:relative}
+.dlm .x{position:absolute;top:12px;inset-inline-end:14px;border:0;background:none;font-size:26px;cursor:pointer;color:var(--mut)}
+@media (max-width:760px){.guide{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 html:not([lang="en"]) [data-l="en"]{display:none!important}
@@ -111,7 +135,7 @@ html[lang="en"] [data-l="ar"]{display:none!important}
     <a href="#trial"><span data-l="ar">التجربة</span><span data-l="en">Free trial</span></a>
     <a href="#pricing"><span data-l="ar">السعر</span><span data-l="en">Pricing</span></a>
     <a href="#faq"><span data-l="ar">أسئلة شائعة</span><span data-l="en">FAQ</span></a>
-    <a class="dl" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe"><span data-l="ar">⬇ تحميل</span><span data-l="en">⬇ Download</span></a>
+    <a class="dl" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe" onclick="dlHelp()"><span data-l="ar">⬇ تحميل</span><span data-l="en">⬇ Download</span></a>
     <button class="lang" onclick="toggleLang()"><span data-l="ar">English</span><span data-l="en">عربي</span></button>
   </nav>
 </div></header>
@@ -124,7 +148,7 @@ html[lang="en"] [data-l="ar"]{display:none!important}
   <p class="lead" data-l="ar">فواتير وإشعارات موقّعة بالتوكن، إقرار القيمة المضافة ونموذج 41 على نماذج المصلحة، الميزانية الضريبية، تكويد الأصناف، فحص الموردين الوهميين، والإيصال الإلكتروني. كل ده من تبويب واحد.</p>
   <p class="lead" data-l="en">Token-signed invoices and notes, VAT returns and Form 41 on the Authority's templates, tax-basis statements, item coding, fake-supplier checks and e-receipts. All from one tab.</p>
   <div class="cta">
-    <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe"><span data-l="ar">⬇ حمّل البرنامج — تجربة مجانية 7 أيام</span><span data-l="en">⬇ Download — 7-day free trial</span></a>
+    <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe" onclick="dlHelp()"><span data-l="ar">⬇ حمّل البرنامج — تجربة مجانية 7 أيام</span><span data-l="en">⬇ Download — 7-day free trial</span></a>
     <a class="btn s" href="#tax"><span data-l="ar">شوف كل المميزات</span><span data-l="en">See every feature</span></a>
   </div>
   <p class="note" data-l="ar">ويندوز 10 / 11 · التجربة بتشتغل لوحدها من غير كود ومن غير كارت</p>
@@ -316,7 +340,7 @@ html[lang="en"] [data-l="ar"]{display:none!important}
       <li>Email support</li>
       <li>Move to a new PC free once every 6 months</li>
     </ul>
-    <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe" style="width:100%;justify-content:center"><span data-l="ar">⬇ حمّل وابدأ التجربة</span><span data-l="en">⬇ Download and start the trial</span></a>
+    <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe" onclick="dlHelp()" style="width:100%;justify-content:center"><span data-l="ar">⬇ حمّل وابدأ التجربة</span><span data-l="en">⬇ Download and start the trial</span></a>
     <div class="extra" data-l="ar">🛒 الإيصال الإلكتروني إضافة بسعر منفصل — <a href="mailto:mohamed.khalid9941@gmail.com?subject=%D8%A5%D8%B6%D8%A7%D9%81%D8%A9%20%D8%A7%D9%84%D8%A5%D9%8A%D8%B5%D8%A7%D9%84%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A">اسأل عنها</a></div>
     <div class="extra" data-l="en">🛒 E-receipts are a separately priced add-on — <a href="mailto:mohamed.khalid9941@gmail.com?subject=E-receipt%20add-on">ask about it</a></div>
   </div>
@@ -327,8 +351,11 @@ html[lang="en"] [data-l="ar"]{display:none!important}
     <h2 data-l="ar">جاهز تجرّب؟</h2><h2 data-l="en">Ready to try?</h2>
     <p class="sub" data-l="ar" style="margin:0 auto 22px">التحميل بيبدأ على طول، وأول ما تسطّب البرنامج بيتحدّث لوحده لأي إصدار جديد.</p>
     <p class="sub" data-l="en" style="margin:0 auto 22px">The download starts right away, and once installed the program updates itself.</p>
-    <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe"><span data-l="ar">⬇ تحميل ETA Bridge لويندوز</span><span data-l="en">⬇ Download ETA Bridge for Windows</span></a>
+    <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe" onclick="dlHelp()"><span data-l="ar">⬇ تحميل ETA Bridge لويندوز</span><span data-l="en">⬇ Download ETA Bridge for Windows</span></a>
     <p class="note" data-l="ar">ويندوز 10 / 11 (64 بت)</p><p class="note" data-l="en">Windows 10 / 11 (64-bit)</p>
+    <h3 style="margin:26px 0 0;font-size:19px" data-l="ar">ويندوز حذّرك؟ ده طبيعي، اعمل كده:</h3>
+    <h3 style="margin:26px 0 0;font-size:19px" data-l="en">Did Windows warn you? That's normal — do this:</h3>
+    <div class="guide" data-l="ar"><div class="gstep"><b><i>1</i>لو المتصفح حذّر وانت بتحمّل</b><div class="mock dl"><div class="row"><span class="ic">!</span><span><b>ETABridge-Setup.exe</b><br>isn't commonly downloaded. Make sure you trust it before you open it.</span></div><div class="act"><span>Delete</span><span class="hl">Keep</span></div></div><p>دوس على النقط جنب الملف واختار <b>Keep</b> أو «احتفظ». ده بيحصل مع أي برنامج جديد.</p></div><div class="gstep"><b><i>2</i>ويندوز هيطلّع شاشة زرقا</b><div class="mock win"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<br><span class="lnk hl">More info</span><div class="btns"><span>Don't run</span></div></div><p>ده طبيعي لأي برنامج لسه جديد ومش مشهور. دوس على <b>More info</b>.</p></div><div class="gstep"><b><i>3</i>دوس Run anyway</b><div class="mock win"><div class="t">Windows protected your PC</div>App: ETABridge-Setup.exe<br>Publisher: Unknown publisher<div class="btns"><span class="hl">Run anyway</span><span>Don't run</span></div></div><p>هيظهر اسم الملف وزرار <b>Run anyway</b>. دوسه والتسطيب هيبدأ عادي، ومرة واحدة بس.</p></div></div><div class="safe" data-l="ar">🔒 <span>التحذير ده مش معناه إن فيه مشكلة. ويندوز بيطلّعه لأي برنامج جديد لسه ماتحمّلش كتير. البرنامج بيشتغل على جهازك بس، ومش بيبعت بياناتك لأي حد. ولو عندك أي قلق، ابعتلنا على الإيميل.</span></div><div class="guide" data-l="en"><div class="gstep"><b><i>1</i>If the browser warns while downloading</b><div class="mock dl"><div class="row"><span class="ic">!</span><span><b>ETABridge-Setup.exe</b><br>isn't commonly downloaded. Make sure you trust it before you open it.</span></div><div class="act"><span>Delete</span><span class="hl">Keep</span></div></div><p>Click the dots next to the file and choose <b>Keep</b>. This happens with any new program.</p></div><div class="gstep"><b><i>2</i>Windows says "Windows protected your PC"</b><div class="mock win"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<br><span class="lnk hl">More info</span><div class="btns"><span>Don't run</span></div></div><p>This is normal for any new, not-yet-famous program. Click <b>More info</b>.</p></div><div class="gstep"><b><i>3</i>Click Run anyway</b><div class="mock win"><div class="t">Windows protected your PC</div>App: ETABridge-Setup.exe<br>Publisher: Unknown publisher<div class="btns"><span class="hl">Run anyway</span><span>Don't run</span></div></div><p>The file name and a <b>Run anyway</b> button appear. Click it and setup starts, just once.</p></div></div><div class="safe" data-l="en">🔒 <span>This warning doesn't mean something is wrong: Windows shows it for any new program that hasn't been downloaded much yet. The program runs only on your PC and doesn't send your data anywhere. Any concern? Email us.</span></div>
   </div>
 </div></section>
 
@@ -342,7 +369,7 @@ html[lang="en"] [data-l="ar"]{display:none!important}
     <details><summary>لو بعتت فاتورة غلط؟</summary><p>كل فاتورة بتتراجع قبل الإرسال. ولو حصل، تلغيها من البرنامج خلال 3 أيام، أو تعمل إشعار دائن.</p></details>
     <details><summary>عندي أكتر من شركة</summary><p>برنامج واحد بيشغّل كل الشركات، وكل رقم تسجيل ليه ترخيص لوحده.</p></details>
     <details><summary>بيدعم الإيصال الإلكتروني؟</summary><p>أيوه، كإضافة مدفوعة بتتفعّل في الترخيص: شاشة كاشير، طباعة بكود QR، مرتجعات، وإرسال تلقائي.</p></details>
-    <details><summary>ويندوز بيقول البرنامج مش آمن</summary><p>ده لأن البرنامج لسه مش موقّع بشهادة. دوس More info وبعدين Run anyway.</p></details>
+    <details><summary>ويندوز بيقول البرنامج مش آمن</summary><p>ده بيحصل مع أي برنامج جديد لسه ماتحمّلش كتير. دوس More info وبعدين Run anyway، وشوف الصور في قسم «تحميل» تحت.</p></details>
   </div>
   <div class="faq" data-l="en">
     <details><summary>I don't use Manager, only the ETA portal</summary><p>Choose "Tax portal only" at setup and everything about Manager is hidden. The whole tax tab works on its own, and you can issue invoices from the program.</p></details>
@@ -357,6 +384,15 @@ html[lang="en"] [data-l="ar"]{display:none!important}
 </div></section>
 </main>
 
+<div class="dlm" id="dlm" onclick="if(event.target===this)this.classList.remove('on')"><div class="box">
+  <button class="x" onclick="document.getElementById('dlm').classList.remove('on')" aria-label="close">×</button>
+  <h2 style="font-size:24px" data-l="ar">⬇ التحميل بدأ — خطوة صغيرة قبل التسطيب</h2>
+  <h2 style="font-size:24px" data-l="en">⬇ Download started — one small step before setup</h2>
+  <p class="sub" style="margin:0" data-l="ar">البرنامج جديد، فويندوز والمتصفح ممكن يحذّروك منه أول مرة. ده عادي، اعمل كده:</p>
+  <p class="sub" style="margin:0" data-l="en">The program is new, so Windows and your browser may warn you the first time. That's normal:</p>
+  <div class="guide" data-l="ar"><div class="gstep"><b><i>1</i>لو المتصفح حذّر وانت بتحمّل</b><div class="mock dl"><div class="row"><span class="ic">!</span><span><b>ETABridge-Setup.exe</b><br>isn't commonly downloaded. Make sure you trust it before you open it.</span></div><div class="act"><span>Delete</span><span class="hl">Keep</span></div></div><p>دوس على النقط جنب الملف واختار <b>Keep</b> أو «احتفظ». ده بيحصل مع أي برنامج جديد.</p></div><div class="gstep"><b><i>2</i>ويندوز هيطلّع شاشة زرقا</b><div class="mock win"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<br><span class="lnk hl">More info</span><div class="btns"><span>Don't run</span></div></div><p>ده طبيعي لأي برنامج لسه جديد ومش مشهور. دوس على <b>More info</b>.</p></div><div class="gstep"><b><i>3</i>دوس Run anyway</b><div class="mock win"><div class="t">Windows protected your PC</div>App: ETABridge-Setup.exe<br>Publisher: Unknown publisher<div class="btns"><span class="hl">Run anyway</span><span>Don't run</span></div></div><p>هيظهر اسم الملف وزرار <b>Run anyway</b>. دوسه والتسطيب هيبدأ عادي، ومرة واحدة بس.</p></div></div><div class="safe" data-l="ar">🔒 <span>التحذير ده مش معناه إن فيه مشكلة. ويندوز بيطلّعه لأي برنامج جديد لسه ماتحمّلش كتير. البرنامج بيشتغل على جهازك بس، ومش بيبعت بياناتك لأي حد. ولو عندك أي قلق، ابعتلنا على الإيميل.</span></div><div class="guide" data-l="en"><div class="gstep"><b><i>1</i>If the browser warns while downloading</b><div class="mock dl"><div class="row"><span class="ic">!</span><span><b>ETABridge-Setup.exe</b><br>isn't commonly downloaded. Make sure you trust it before you open it.</span></div><div class="act"><span>Delete</span><span class="hl">Keep</span></div></div><p>Click the dots next to the file and choose <b>Keep</b>. This happens with any new program.</p></div><div class="gstep"><b><i>2</i>Windows says "Windows protected your PC"</b><div class="mock win"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<br><span class="lnk hl">More info</span><div class="btns"><span>Don't run</span></div></div><p>This is normal for any new, not-yet-famous program. Click <b>More info</b>.</p></div><div class="gstep"><b><i>3</i>Click Run anyway</b><div class="mock win"><div class="t">Windows protected your PC</div>App: ETABridge-Setup.exe<br>Publisher: Unknown publisher<div class="btns"><span class="hl">Run anyway</span><span>Don't run</span></div></div><p>The file name and a <b>Run anyway</b> button appear. Click it and setup starts, just once.</p></div></div><div class="safe" data-l="en">🔒 <span>This warning doesn't mean something is wrong: Windows shows it for any new program that hasn't been downloaded much yet. The program runs only on your PC and doesn't send your data anywhere. Any concern? Email us.</span></div>
+  <div style="text-align:center;margin-top:18px"><button class="btn p" style="border:0;cursor:pointer;font:inherit" onclick="document.getElementById('dlm').classList.remove('on')"><span data-l="ar">تمام، فهمت</span><span data-l="en">Got it</span></button></div>
+</div></div>
 <footer><div class="wrap">
   <div><b>ETA Bridge</b> · <a href="mailto:mohamed.khalid9941@gmail.com">mohamed.khalid9941@gmail.com</a></div>
   <div data-l="ar">برنامج مستقل، مالوش علاقة رسمية بـ Manager.io ولا بمصلحة الضرائب المصرية. الصور ببيانات وهمية.</div>
@@ -364,6 +400,7 @@ html[lang="en"] [data-l="ar"]{display:none!important}
 </div></footer>
 
 <script>
+function dlHelp(){setTimeout(function(){document.getElementById("dlm").classList.add("on")},400)}
 function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==="ar"?"rtl":"ltr";try{localStorage.setItem("lang",l)}catch(e){}}
 function toggleLang(){setLang(document.documentElement.lang==="ar"?"en":"ar")}
 try{var s=localStorage.getItem("lang");if(s)setLang(s)}catch(e){}
