@@ -58,6 +58,9 @@ h2{font-size:clamp(26px,3.4vw,36px);margin:0 0 10px;line-height:1.3}
 ul.ticks{list-style:none;padding:0;margin:16px 0 0}
 ul.ticks li{padding:5px 0;padding-inline-start:30px;position:relative;font-size:16px}
 ul.ticks li:before{content:"✓";position:absolute;inset-inline-start:0;top:7px;width:20px;height:20px;border-radius:50%;background:var(--g);color:#fff;font-size:12px;display:grid;place-items:center}
+.vid{max-width:960px;margin:0 auto;border-radius:16px;overflow:hidden;background:#0b3d33;box-shadow:0 30px 60px -30px rgba(15,92,76,.45)}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#0b3d33}
+.vidcap{text-align:center;color:var(--mut);font-size:14px;margin-top:10px}
 .alarm{background:linear-gradient(135deg,#fff5f3,#fff);border:1px solid #f1c9c4;border-radius:22px;padding:34px;margin-top:10px}
 .alarm .badge{display:inline-block;background:#c0392b;color:#fff;border-radius:99px;padding:4px 14px;font-size:14px;font-weight:700;margin-bottom:12px}
 .alarm h2{margin:0 0 10px}.alarm .grid{display:grid;grid-template-columns:1fr 1.3fr;gap:34px;align-items:center}
@@ -138,6 +141,8 @@ html[lang="en"] [data-l="ar"]{display:none!important}
   <a class="logo" href="#"><i>EB</i>ETA Bridge</a>
   <nav class="links">
     <a href="#tax"><span data-l="ar">تبويب الضرائب</span><span data-l="en">Tax tab</span></a>
+    <a href="#video"><span data-l="ar">فيديو</span><span data-l="en">Video</span></a>
+    <a href="#download"><span data-l="ar">طريقة التسطيب</span><span data-l="en">How to install</span></a>
     <a href="#trial"><span data-l="ar">التجربة</span><span data-l="en">Free trial</span></a>
     <a href="#pricing"><span data-l="ar">السعر</span><span data-l="en">Pricing</span></a>
     <a href="#faq"><span data-l="ar">أسئلة شائعة</span><span data-l="en">FAQ</span></a>
@@ -166,6 +171,12 @@ html[lang="en"] [data-l="ar"]{display:none!important}
     <div class="stat"><b>3</b><span data-l="ar">إقرارات: شهري وربع سنوي وسنوي</span><span data-l="en">returns: monthly, quarterly, annual</span></div>
     <div class="stat"><b>0</b><span data-l="ar">بيانات بتطلع برّه جهازك</span><span data-l="en">data leaving your PC</span></div>
   </div>
+</div></section>
+
+<section id="video" style="padding-top:10px"><div class="wrap">
+  <div class="c"><h2 data-l="ar">شوف البرنامج في دقيقة ونص</h2><h2 data-l="en">See the program in 90 seconds</h2></div>
+  <div class="vid"><video controls preload="none" playsinline poster="videos/intro.jpg"><source src="videos/intro.mp4" type="video/mp4"></video></div>
+  <p class="vidcap" data-l="ar">كل البيانات في الفيديو وهمية.</p><p class="vidcap" data-l="en">All data in the video is fictional.</p>
 </div></section>
 
 <section id="fake" style="padding-top:10px"><div class="wrap"><div class="alarm">
@@ -383,6 +394,11 @@ html[lang="en"] [data-l="ar"]{display:none!important}
     <p class="sub" data-l="en" style="margin:0 auto 22px">The download starts right away, and once installed the program updates itself.</p>
     <a class="btn p" href="https://github.com/mohamedkhalid99412/etabridge-updates/releases/latest/download/ETABridge-Setup.exe" onclick="dlHelp()"><span data-l="ar">⬇ تحميل ETA Bridge لويندوز</span><span data-l="en">⬇ Download ETA Bridge for Windows</span></a>
     <p class="note" data-l="ar">ويندوز 10 / 11 (64 بت)</p><p class="note" data-l="en">Windows 10 / 11 (64-bit)</p>
+    <h3 style="margin:30px 0 10px;font-size:19px" data-l="ar">🎬 طريقة التسطيب والإعداد خطوة بخطوة</h3>
+    <h3 style="margin:30px 0 10px;font-size:19px" data-l="en">🎬 Installing and setting up, step by step</h3>
+    <p class="note" data-l="ar" style="margin:0 0 12px">من التحميل لحد ما البرنامج يشتغل، ومنها إزاي تجيب الـ Client ID والـ Secret من بوابة الفاتورة.</p>
+    <p class="note" data-l="en" style="margin:0 0 12px">From download to a running program, including getting the Client ID and Secret from the e-invoice portal.</p>
+    <div class="vid"><video controls preload="none" playsinline poster="videos/install.jpg"><source src="videos/install.mp4" type="video/mp4"></video></div>
     <h3 style="margin:26px 0 0;font-size:19px" data-l="ar">ويندوز حذّرك؟ ده طبيعي، اعمل كده:</h3>
     <h3 style="margin:26px 0 0;font-size:19px" data-l="en">Did Windows warn you? That's normal — do this:</h3>
     <div class="guide" data-l="ar"><div class="gstep"><b><i>1</i>لو المتصفح حذّر وانت بتحمّل</b><div class="mock dl"><div class="row"><span class="ic">!</span><span><b>ETABridge-Setup.exe</b><br>isn't commonly downloaded. Make sure you trust it before you open it.</span></div><div class="act"><span>Delete</span><span class="hl">Keep</span></div></div><p>دوس على النقط جنب الملف واختار <b>Keep</b> أو «احتفظ». ده بيحصل مع أي برنامج جديد.</p></div><div class="gstep"><b><i>2</i>ويندوز هيطلّع شاشة زرقا</b><div class="mock win"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<br><span class="lnk hl">More info</span><div class="btns"><span>Don't run</span></div></div><p>ده طبيعي لأي برنامج لسه جديد ومش مشهور. دوس على <b>More info</b>.</p></div><div class="gstep"><b><i>3</i>دوس Run anyway</b><div class="mock win"><div class="t">Windows protected your PC</div>App: ETABridge-Setup.exe<br>Publisher: Unknown publisher<div class="btns"><span class="hl">Run anyway</span><span>Don't run</span></div></div><p>هيظهر اسم الملف وزرار <b>Run anyway</b>. دوسه والتسطيب هيبدأ عادي، ومرة واحدة بس.</p></div></div><div class="safe" data-l="ar">🔒 <span>التحذير ده مش معناه إن فيه مشكلة. ويندوز بيطلّعه لأي برنامج جديد لسه ماتحمّلش كتير. البرنامج بيشتغل على جهازك بس، ومش بيبعت بياناتك لأي حد. ولو عندك أي قلق، ابعتلنا على الإيميل.</span></div><div class="guide" data-l="en"><div class="gstep"><b><i>1</i>If the browser warns while downloading</b><div class="mock dl"><div class="row"><span class="ic">!</span><span><b>ETABridge-Setup.exe</b><br>isn't commonly downloaded. Make sure you trust it before you open it.</span></div><div class="act"><span>Delete</span><span class="hl">Keep</span></div></div><p>Click the dots next to the file and choose <b>Keep</b>. This happens with any new program.</p></div><div class="gstep"><b><i>2</i>Windows says "Windows protected your PC"</b><div class="mock win"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<br><span class="lnk hl">More info</span><div class="btns"><span>Don't run</span></div></div><p>This is normal for any new, not-yet-famous program. Click <b>More info</b>.</p></div><div class="gstep"><b><i>3</i>Click Run anyway</b><div class="mock win"><div class="t">Windows protected your PC</div>App: ETABridge-Setup.exe<br>Publisher: Unknown publisher<div class="btns"><span class="hl">Run anyway</span><span>Don't run</span></div></div><p>The file name and a <b>Run anyway</b> button appear. Click it and setup starts, just once.</p></div></div><div class="safe" data-l="en">🔒 <span>This warning doesn't mean something is wrong: Windows shows it for any new program that hasn't been downloaded much yet. The program runs only on your PC and doesn't send your data anywhere. Any concern? Email us.</span></div>
